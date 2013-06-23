@@ -21,7 +21,7 @@
             <element name="RegistarSOlicitudRequest">
                 <complexType>
                     <sequence>
-                        <element name="input" type="string"/>
+                        <element name="tipo" type="string"/>
                     </sequence>
                 </complexType>
             </element>
