@@ -53,8 +53,27 @@
                  portType="tns:RegistarSOlicitud"
                  operation="process" variable="input"
                  createInstance="yes"/>
-        <bpel:empty name="FIX_ME-Add_Business_Logic_Here"></bpel:empty>
+        
         <!-- Generate reply to synchronous request -->
+        <bpel:if name="If">
+            <bpel:sequence name="Sequence">
+                <bpel:assign validate="no" name="Assign"></bpel:assign>
+                <bpel:invoke name="Invoke"></bpel:invoke>
+                <bpel:assign validate="no" name="Assign3"></bpel:assign>
+            </bpel:sequence>
+        <bpel:elseif>
+                <bpel:sequence name="Sequence1">
+                    <bpel:assign validate="no" name="Assign1"></bpel:assign>
+                    <bpel:invoke name="Invoke1"></bpel:invoke>
+                    <bpel:assign validate="no" name="Assign4"></bpel:assign>
+                </bpel:sequence>
+            </bpel:elseif><bpel:else>
+                <bpel:sequence name="Sequence2">
+                    <bpel:assign validate="no" name="Assign2"></bpel:assign>
+                    <bpel:invoke name="Invoke2"></bpel:invoke>
+                    <bpel:assign validate="no" name="Assign5"></bpel:assign>
+                </bpel:sequence>
+            </bpel:else></bpel:if>
         <bpel:reply name="replyOutput" 
                partnerLink="client"
                portType="tns:RegistarSOlicitud"
